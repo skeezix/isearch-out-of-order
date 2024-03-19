@@ -33,6 +33,7 @@
   (isearch-define-mode-toggle ooo-regex "o" skeez/ooo-regex-gen "Turning on skeez/ooo-regex search turns off built-in regexp mode.")
 
   ;; set as default mode, so we don't have to M-o or whatever to activate it
+  ;; TODO: Make this configurable as to whethor is default or how to toggle when not default
   (setq-default search-default-mode #'skeez/ooo-regex-gen)
 
   ;; match string -> regex conversion
@@ -57,8 +58,9 @@
       )
     )
 
-    ;; lame little hack so that we can handle 'escaped spaces' to mean literally a space, not orderless
-    ;; ie: swap "\ " for "``" unlikely substring, do all the things, then swap "``" -> " "
+    ;; lame little hack so that we can handle 'escaped spaces' to mean literally a space, not out of order
+    ;; ie: swap "\ " for an unlikely substring, do all the things, then swap it back
+    ;; TODO: Remove the need for this, and/or make it configurable
     (setq search-input (string-replace "\\ " "_=" search-input))
 
     ;; repeat adding chunks to make the whole regexp
