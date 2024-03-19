@@ -17,8 +17,8 @@ Adding an out of order multi word search for Emacs isearch
 
 *Examples*
 
-foo bar -> out of order search for 'foo anything bar' and 'bar anything foo'
-foo\ bar -> search for "foo bar" precisely
+- foo bar -> out of order search for 'foo anything bar' and 'bar anything foo'
+- foo\ bar -> search for "foo bar" precisely
 
 The code is pretty hackish but seems to work. It is made complicated by Emacs regex engine lacking positive lookahead so we can't just string
 the tokens together with (=? booleans but instead have to twist "foo bar" into literally "foo.\*bar|bar.\*foo" ... which gets especially goofy
