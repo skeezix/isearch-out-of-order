@@ -28,3 +28,11 @@ visual-regex package lets you use external python for its regex engine, but I'm 
 *Installation*
 
 Initial stab is just a code snippet; drop into your config, or inhale it into your config with 'require'
+
+*Possible improvements*
+
+- easier installation; tidy up the git, perhaps consider MELPAization
+- improve the escaped 'search as is' system, or at least configurable internal string
+- configurable if this search should be default or not
+- configurable keybind for swapping between isearch modes (literal, regex, isearch-ooo, etc); I never switch modes, but isearch supports it, so I should look into it..
+- code iteration; ex: skeez/determine-permutations-of-list is probably stupid; the lispyness of the code layout is poor
